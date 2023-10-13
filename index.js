@@ -122,6 +122,7 @@ function decimalToTimeString(dec) {
   }
 
   // return padded string of format `mm:ss`
+  // not including padding on minutes to avoid leading 0 with < 10 min pace
   return `${min}:${padNum(sec)}`
 }
 
