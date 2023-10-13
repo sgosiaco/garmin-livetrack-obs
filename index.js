@@ -104,6 +104,11 @@ setInterval(async () => {
 
 // decimalToTimeString converts minute decimal to time string
 function decimalToTimeString(dec) {
+  // if for some reason we receive an undefined val, just default to 0:00
+  if (dec == undefined) {
+    return "0:00"
+  }
+
   // extract the whole number of minutes
   let min = Math.floor(dec)
   // extract the fractional part with modulo
@@ -128,6 +133,11 @@ function decimalToTimeString(dec) {
 
 // padNum converts the incoming number to a padded number with lead
 function padNum(input) {
+  // if for some reason we receive an undefined val, just default to 00
+  if (input == undefined) {
+    return "00"
+  }
+
   // convert number to string and add leading 0s up to a max of 2
   return input.toString().padStart(2, '0');
 }
