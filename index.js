@@ -91,7 +91,7 @@ setInterval(async () => {
   }
 
   // Output full trackpoints.json for advanced users
-  TextOutputter.OutputFile(config.outputFolder, "trackpoints.json", data);
+  TextOutputter.OutputFile(config.outputFolder, "trackpoints.json", JSON.stringify(data));
 
   // Output individual fields from the given templates
   TextOutputter.OutputToTextFiles(
