@@ -114,7 +114,8 @@ function decimalToTimeString(dec) {
   // extract the fractional part with modulo
   let fracSec = dec % 1
   // convert the fractional part to whole seconds and round
-  let sec = Math.round(60 * fracSec)
+  // using floor to avoid accidental rounding up to 60 seconds
+  let sec = Math.floor(60 * fracSec)
 
   // handle case where whole minutes is >= 60
   if (min >= 60) {
